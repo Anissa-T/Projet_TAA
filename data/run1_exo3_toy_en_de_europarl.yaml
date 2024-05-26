@@ -1,0 +1,33 @@
+# Pour run1 de l'exercice 3
+
+## Where the samples will be written
+save_data: toy-ende/run/en_fr_europarl
+## Where the vocab(s) will be written
+src_vocab: toy-ende/run/en_fr_europarl.vocab.src
+tgt_vocab: toy-ende/run/en_fr_europarl.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: toy-ende/Europarl_train_10k.tok.true.clean.en
+        path_tgt: toy-ende/Europarl_train_10k.tok.true.clean.fr
+    valid:
+        path_src: toy-ende/Europarl_dev_1k.tok.true.clean.en
+        path_tgt: toy-ende/Europarl_dev_1k.tok.true.clean.fr
+
+
+# Vocabulary files that were just created
+src_vocab: toy-ende/run/en_fr_europarl.vocab.src
+tgt_vocab: toy-ende/run/en_fr_europarl.vocab.tgt
+
+# Train on a single GPU
+world_size: 1
+#gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: toy-ende/run/model
+save_checkpoint_steps: 500
+train_steps: 1000
+valid_steps: 500
